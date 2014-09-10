@@ -14,7 +14,11 @@ int getNextData(){
 		file = fopen ( filename, "r" );
 	}
 
-	fscanf(file,"%i",&i1);
+	if(!feof(file)){
+		fscanf(file,"%i",&i1);
+		return i1;
+	}
+	else{return -1;}
 
-	return i1;
+
 }
