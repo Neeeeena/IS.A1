@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include src/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -22,19 +23,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: A1
+all: Assignment1
 
 # Tool invocations
-A1: $(OBJS) $(USER_OBJS)
+Assignment1: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MacOS X C Linker'
-	gcc  -o "A1" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "Assignment1" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES) A1
+	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES) Assignment1
 	-@echo ' '
 
 .PHONY: all clean dependents
